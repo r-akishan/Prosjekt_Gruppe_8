@@ -1,0 +1,46 @@
+lengste = 0
+antall = 0
+
+startdato = ""
+sluttdato = ""
+
+beste_start= ""
+beste_slutt = ""
+
+
+with open("sinnes_2014_2025.csv", encoding= "utf-8") as fil:
+
+    fil.readline()
+   
+    for linje in fil:
+          deler = linje.split(";")
+         
+          dato = deler[2].strip()
+          nedbør =(deler[4].strip())
+
+          if nedbør == "":
+               continue
+
+          if nedbør== "-":
+              continue
+
+          nedbør = float(nedbør.replace(",", "."))
+
+          
+
+          if nedbør == 0.0:
+               if antall == 0:
+                   startdato = dato
+               antall += 1
+               sluttdato = dato
+               
+
+               if antall > lengste:
+                   lengste = antall
+                   beste_start = startdato
+                   beste_slutt = sluttdato
+          else:
+               antall = 0
+print("Lengste periode med 0 nedbør:", lengste)
+print("Beste startdato:", beste_start)
+print("Beste sluttdato:", beste_slutt)
