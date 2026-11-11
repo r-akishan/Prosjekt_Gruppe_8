@@ -1,3 +1,4 @@
+
 # Oppgave e
 filbane_makstemp = "sinnes_2014_2025_med_makstemperatur.csv"
 

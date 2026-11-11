@@ -1,0 +1,61 @@
+import csv
+import matplotlib.pyplot as plt
+
+MIN_DAGER = 300
+
+
+stasjoner = {
+    "Oslo Blindern": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/oslo_blindern_1954_2025_med_makstemperatur.csv", 4),
+    "Røros": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/roeros_1954_2025_med_makstemperatur.csv", 4),
+    "Tromsø": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/tromsoe_1954_2025_med_makstemperatur.csv", 4),
+    "Værnes": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/vaernes_1954_2025_med_makstemperatur.csv", 4),
+    "Venabu": ("Arbeidsoppgaver/venabu_1954_2025_med_makstemperatur.csv", 4),
+    "Sinnes": ("sinnes_2014_2025.csv", 3),
+}
+
+
+def snitt_per_år(filnavn, temp_kolonne):
+    år_liste = []                                   
+    summer = []                                  
+    antall = []                                      
+
+    with open(filnavn, encoding="utf-8-sig") as fil:
+        leser = csv.reader(fil, delimiter=";")
+        next(leser)                                     
+        for linje in leser:
+            try:
+                temperatur = float(linje[temp_kolonne].replace(",", "."))
+                år = int(linje[2][-4:])               
+            except (ValueError, IndexError):
+                continue                                
+
+            if år in år_liste:
+                i = år_liste.index(år)
+                summer[i] += temperatur
+                antall[i] += 1
+            else:
+                år_liste.append(år)
+                summer.append(temperatur)
+                antall.append(1)
+
+    gode_år = []
+    snitt = []
+    for år in sorted(år_liste):
+        i = år_liste.index(år)
+        if antall[i] >= MIN_DAGER:                  
+            gode_år.append(år)
+            snitt.append(summer[i] / antall[i])
+    return gode_år, snitt
+
+
+for navn in stasjoner:
+    filnavn, kolonne = stasjoner[navn]
+    år, snitt = snitt_per_år(filnavn, kolonne)
+    plt.plot(år, snitt, label=navn)
+
+plt.title("Gjennomsnittstemperatur per år")
+plt.xlabel("År")
+plt.ylabel("Temperatur (°C)")
+plt.legend()
+plt.grid(True)
+plt.show()

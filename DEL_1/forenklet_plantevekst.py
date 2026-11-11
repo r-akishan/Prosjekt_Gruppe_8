@@ -17,7 +17,7 @@ def total_vekst(år):
     with open("sinnes_2014_2025.csv", mode="r", encoding="utf-8") as fil:
         leser = csv.reader(fil, delimiter=";")
         next(leser)
-
+           
         for linje in leser:
             try:
                 linje_år = int(linje[2].split(".")[2])
