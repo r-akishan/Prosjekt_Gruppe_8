@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 
 # Oppgave e
 filbane_makstemp = "sinnes_2014_2025_med_makstemperatur.csv"
+=======
+#Oppgave e
+import datetime
+import csv
+filbane_makstemp = "Python-øvinger/Prosjekt_Gruppe_8/sinnes_2014_2025_med_makstemperatur.csv"
+>>>>>>> Stashed changes
 
 def beregn_skifore(valgt_ar): 
     teller_skidager = 0 

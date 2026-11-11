@@ -43,7 +43,7 @@ else:
         for i in range (len(datoer)):
             if ".04." in datoer[i]:
                 april = i
-            break
+                break
         print(f"Start 1. april: maksimal plantevekst er {maks_vekst(temperaturer, april):.1f}")
 
         beste_start = 0 

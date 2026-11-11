@@ -31,7 +31,7 @@ def total_vekst(år):
 
     return total, dager
 
-år = int(input("Skriv inn et årstall mellom 2014-2026 :"))
+år = int(input("Skriv inn et årstall mellom 2014-2025 :"))
 vekst, dager = total_vekst(år)
 print(f"Planten vokste {vekst:.1f} vekstenheter i {år} i løpet av {dager} dager.")
         

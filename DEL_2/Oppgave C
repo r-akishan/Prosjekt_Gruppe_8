@@ -5,12 +5,12 @@ MIN_DAGER = 300
 
 
 stasjoner = {
-    "Oslo Blindern": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/oslo_blindern_1954_2025_med_makstemperatur.csv", 4),
-    "Røros": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/roeros_1954_2025_med_makstemperatur.csv", 4),
-    "Tromsø": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/tromsoe_1954_2025_med_makstemperatur.csv", 4),
-    "Værnes": ("C:/Users/thaju/Downloads/data120/Arbeidsoppgaver/vaernes_1954_2025_med_makstemperatur.csv", 4),
-    "Venabu": ("Arbeidsoppgaver/venabu_1954_2025_med_makstemperatur.csv", 4),
-    "Sinnes": ("sinnes_2014_2025.csv", 3),
+    "Oslo Blindern": ("DEL_2/oslo_blindern_1954_2025_med_makstemperatur.csv", 4),
+    "Røros": ("DEL_2/roeros_1954_2025_med_makstemperatur.csv", 4),
+    "Tromsø": ("DEL_2/tromsoe_1954_2025_med_makstemperatur.csv", 4),
+    "Værnes": ("DEL_2/vaernes_1954_2025_med_makstemperatur.csv", 4),
+    "Venabu": ("DEL_2/venabu_1954_2025_med_makstemperatur.csv", 4),
+    "Sinnes": ( "DEL_2/sinnes_2014_2025_med_makstemperatur.csv", 3),
 }
 
 
